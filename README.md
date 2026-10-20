@@ -1,5 +1,4 @@
-Swag Labs BDD Automation Framework
-A test automation framework built for SauceDemo (Swag Labs) using Java, Selenium WebDriver, Cucumber (BDD), and JUnit 5.
+"A personal portfolio project exploring modular BDD test automation with Selenium, Cucumber, and JUnit 5."
 
 Tech Stack
 Language: Java (OpenJDK 24)
