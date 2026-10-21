@@ -3,7 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import utils.base;
 
-public class CheckOut extends base {
+public class CheckOutPage extends base {
 
     private By cartLink = By.className("shopping_cart_link");
     private By checkoutButton = By.id("checkout");

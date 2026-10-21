@@ -4,11 +4,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import pageObjects.AddToCartPage;
-import pageObjects.CheckOut;
+import pageObjects.CheckOutPage;
 
 public class CheckOutSteps {
 
-    CheckOut checkOut = new CheckOut();
+    CheckOutPage checkOut = new CheckOutPage();
     AddToCartPage addToCartPage = new AddToCartPage();
 
     @When("I click on the Add to Cart button")
