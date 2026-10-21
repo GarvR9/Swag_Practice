@@ -10,6 +10,8 @@ public class AddToCartPage extends base {
     private By firstRemoveButton = By.id("remove-sauce-labs-backpack");
     private By secondRemoveButton = By.id("remove-sauce-labs-bike-light");
     private By cartBadge = By.className("shopping_cart_badge");
+    private By removeButtonInCart = By.id("remove-sauce-labs-backpack");
+    private By cartBadge1 = By.className("shopping_cart_badge");
 
     public void clickFirstAddToCartButton() {
         ClickOnElement(firstAddToCartButton);
@@ -32,5 +34,18 @@ public class AddToCartPage extends base {
         boolean firstVisible = WaitForExpectedElement(firstRemoveButton).isDisplayed();
         boolean secondVisible = WaitForExpectedElement(secondRemoveButton).isDisplayed();
         return firstVisible && secondVisible;
+    }
+
+    public void clickRemoveButton() {
+        ClickOnElement(removeButtonInCart);
+    }
+
+    public boolean isCartBadgeDisplayed() {
+        try {
+
+            return WaitForExpectedElement(cartBadge1).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
