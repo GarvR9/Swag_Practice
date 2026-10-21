@@ -9,6 +9,13 @@ public class AddToCartSteps {
 
     AddToCartPage productsPage = new AddToCartPage();
 
+    @When("I click on the {string} button")
+    public void i_click_on_the_button(String buttonText) {
+        if (buttonText.equals("Add to Cart")) {
+            productsPage.clickFirstAddToCartButton();
+        }
+    }
+
     @Then("the product should be added to the cart")
     public void the_product_should_be_added_to_cart() {
         boolean isDisplayed = productsPage.isFirstRemoveButtonDisplayed();
