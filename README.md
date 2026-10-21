@@ -1,50 +1,54 @@
-Swag Labs BDD Automation Framework
-A test automation framework built for SauceDemo (Swag Labs) using Java, Selenium WebDriver, Cucumber (BDD), and JUnit 5.
+# Swag Labs BDD Automation Framework
 
-Language: Java (OpenJDK 24)
+Hey there! This is a test automation framework built for SauceDemo (Swag Labs) using Java, Selenium WebDriver, Cucumber BDD, and JUnit 5.
 
-Automation: Selenium WebDriver 4
+# What's under the hood
+* Language: Java (OpenJDK 24)
+* Automation: Selenium WebDriver 4
+* BDD: Cucumber 7 (Java)
+* Runner: JUnit Platform Suite (JUnit 5)
+* Build Tool: Maven
 
-BDD: Cucumber 7 (Java)
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-Runner: JUnit Platform Suite (JUnit 5)
+# Project Layout
 
-Build Tool: Maven
+Here is how everything is organized inside the project:
 
-Project Structure
-Plaintext
-src/
-└── test/
-    ├── java/                               
-    │   ├── runner/                        
-    │   │   └── TestRunner.java             # JUnit 5 suite configuration
-    │   ├── stepDefinitions/               
-    │   │   ├── CommonLoginSteps.java       # Shared login logic
-    │   │   └── CartSteps.java              # Shopping cart steps
-    │   └── utils/                          
-    │       └── ConfigReader.java           # Property management
-    │
-    └── resources/                          
-        ├── features/                       
-        │   ├── login.feature               # @Login scenarios
-        │   └── addToCart.feature           # @Cart scenarios
-        └── env.properties                  # Environment configs
-Running the Tests
+* src/test/java/runner/
+  * TestRunner.java - JUnit 5 suite setup
+* src/test/java/stepDefinitions/
+  * CommonLoginSteps.java - Shared login stuff
+  * CartSteps.java - Shopping cart steps
+  * CheckoutSteps.java - Order checkout flow steps
+* src/test/java/utils/
+  * ConfigReader.java - Handles property files
+* src/test/resources/features/
+  * login.feature - Login scenarios (@Login)
+  * addToCart.feature - Cart scenarios (@Cart)
+  * checkout.feature - Checkout scenarios (@Checkout)
+* src/test/resources/
+  * env.properties - Environment configurations
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+# How to Run the Tests
+
 1. Tag Filtering
-Tests are executed dynamically using JUnit 5 configuration parameters in TestRunner.java. You can combine modules using logical operators:
+The tests run dynamically using JUnit 5 config parameters inside TestRunner.java. You can mix and match modules like this:
 
-Java
-@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@Login or @Cart")
+java
+@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@Login or @Cart or @Checkout")
+
 2. Execution
-IntelliJ IDEA: Right-click TestRunner.java -> Run 'TestRunner'
-
-Command Line:
-
+IntelliJ IDEA: Just right-click TestRunner.java and hit Run 'TestRunner'.
+Terminal/Command Line:
 Bash
 mvn clean test
-Reports
-HTML test execution reports are automatically generated at:
-Reports/cucumber-report.html
 
-Author
+Reports
+HTML reports are generated automatically right after execution at:Reports/cucumber-report.html
+
+
+Author/-
 Gaurav Rawat
