@@ -20,3 +20,17 @@ Feature: Complete Checkout Flow
       | Sohan     | Singh    | 110001     | Thank you for your order! |
       | Ram       | Ratan    | 201304     | Thank you for your order! |
       | Simmi     | Kumari   | 201310     | Thank you for your order! |
+
+  @CheckoutNegative
+  Scenario Outline: Verify error messages when mandatory checkout fields are missing
+    When I navigate to the shopping cart page
+    And I click on the Checkout button
+    And I enter valid shipping details with First Name "<FirstName>", Last Name "<LastName>", and Postal Code "<PostalCode>"
+    And I click on the Continue button
+    Then an error message should be displayed with text "<ExpectedError>"
+
+    Examples:
+      | FirstName | LastName | PostalCode | ExpectedError                  |
+      |           | Singh    | 110001     | Error: First Name is required  |
+      | Sohan     |          | 110001     | Error: Last Name is required   |
+      | Sohan     | Singh    |            | Error: Postal Code is required |

@@ -13,7 +13,8 @@ public class LoginPage extends base {
 
     public void userEntersURL() {
         try {
-            String appUrl = pro.getProperty("url");;
+            String appUrl = pro.getProperty("url");
+            ;
             getDriver().get(appUrl);
             System.out.println("✅ Navigated to URL: " + appUrl);
         } catch (Exception e) {

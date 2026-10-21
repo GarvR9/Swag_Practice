@@ -10,7 +10,7 @@ import org.junit.platform.suite.api.Suite;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
-@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@Login or @Cart or @Checkout or @CheckoutFlow")
+@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@Login or @Cart or @Checkout or @CheckoutFlow or @CheckoutNegative")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "stepDefinitions, utils")
 @ConfigurationParameter(key = "cucumber.plugin", value = "pretty, html:Reports/cucumber-report.html")
 public class TestRunner {

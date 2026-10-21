@@ -46,4 +46,10 @@ public class CheckOutSteps {
         String actualMessage = checkOut.getCompleteHeaderMessage();
         Assertions.assertEquals(expectedMessage, actualMessage, "Checkout confirmation message mismatch!");
     }
+
+    @Then("an error message should be displayed with text {string}")
+    public void an_error_message_should_be_displayed_with_text(String expectedError) {
+        String actualError = checkOut.getErrorMessage();
+        Assertions.assertEquals(expectedError, actualError, "Checkout error message mismatch!");
+    }
 }
